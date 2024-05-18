@@ -7,6 +7,7 @@ import subjectRoutes from "./routes/Subject.js"
 import classRoutes from "./routes/Class.js"
 import userRoutes from "./routes/User.js"
 import mongoSanitize from "express-mongo-sanitize"
+import helmet from "helmet"
 import cors from "cors";
 
 const app = express();
@@ -31,6 +32,7 @@ app.use((req, res, next) => {
   );
   next();
 });
+app.use(helmet())
 
 // routes
 app.use("/auth", authRoutes)

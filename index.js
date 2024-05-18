@@ -6,6 +6,7 @@ import chapterRoutes from "./routes/Chapter.js"
 import subjectRoutes from "./routes/Subject.js"
 import classRoutes from "./routes/Class.js"
 import userRoutes from "./routes/User.js"
+import mongoSanitize from "express-mongo-sanitize"
 import cors from "cors";
 
 const app = express();
@@ -18,6 +19,10 @@ mongoose.connect(process.env.DB_URL).then(() => {
 // config
 app.use(express.json());
 app.use(cors());
+app.use(mongoSanitize({
+  replaceWith: "_",
+  allowDots: true
+}))
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(

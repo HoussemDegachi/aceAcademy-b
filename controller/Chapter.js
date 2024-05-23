@@ -12,7 +12,7 @@ export const get = async (req, res) => {
     if (!chapter) throw new ExpressError("Chapter doesn't exist", 404)
 
     // send chapter
-    res.status(500).json({
+    res.status(200).json({
         message: "Chapter was found successfully",
         data: chapter
     })

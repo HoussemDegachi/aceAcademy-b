@@ -1,3 +1,5 @@
+import "./instrument.js"
+import * as Sentry from "@sentry/node"
 import express from "express";
 import mongoose from "mongoose";
 import authRoutes from "./routes/Auth.js"
@@ -47,6 +49,8 @@ app.all("*", (req, res) => {
     message: "Route wasn't found"
   })
 })
+
+Sentry.setupExpressErrorHandler(app);
 
 app.use((err, req, res, next) => {
   console.log(err.stack)

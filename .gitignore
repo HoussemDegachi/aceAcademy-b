@@ -132,3 +132,4 @@ dist
 # Seeds file
 seeds/temp
 seeds/__pycache__
+seeds/*.json

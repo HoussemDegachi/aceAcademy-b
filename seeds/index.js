@@ -81,7 +81,8 @@ const createClassesAndAppend = async (classes, subjects) => {
 
 const seedDB = async () => {
     console.log("Creating Subjects")
-    const subjectId = await createSubject("Math", `${imageBase}temp/icons/math-icon.png`)
+    // const subjectId = await createSubject("Math", `${imageBase}temp/icons/math-icon.png`)
+    const subjectId = "6640ca6ca8c64cba8ee91c9c"
     console.log("Subject created successfully")
     console.log("Creating CHapters and exercises")
     const chapters = await createChaptersAndExercises(exercisesData)

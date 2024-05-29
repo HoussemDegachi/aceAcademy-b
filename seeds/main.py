@@ -11,6 +11,12 @@ def main():
     base = "https://www.devoirat.net"
     header("Step1: Getting tests")
     tests = get_devoirat(url, base)
+    tests = {
+        "Energie_et_controle": ["https://www.devoir.tn/secondaire/Doc/2-%C3%A8me-ann%C3%A9es/Sciences/Physique/S%C3%A9ries/Liste-1/s%C3%A9rie-n%C2%B0-27-travail-d-une-force-puissance-1.pdf", "https://www.devoir.tn/secondaire/Doc/2-%C3%A8me-ann%C3%A9es/Sciences/Physique/S%C3%A9ries/Liste-1/s%C3%A9rie-n%C2%B0-28-travail-d-une-force-puissance-2.pdf"],
+        "optique": ["https://www.devoir.tn/secondaire/Doc/2-%C3%A8me-ann%C3%A9es/Sciences/Physique/S%C3%A9ries/Liste-1/s%C3%A9rie-n%C2%B0-30-r%C3%A9flexion-et-r%C3%A9fraction-de-la-lumi%C3%A8re.pdf"],
+    }
+
+    print(tests)
     print("tests scraped successfully")
 
     # download tests
@@ -26,7 +32,7 @@ def main():
     # log = corrector(log)
 
     # save to JSON
-    with open("data.json", "w") as file:
+    with open("data1.json", "w") as file:
         log = json.dumps(log)
         file.write(log)
 
@@ -35,7 +41,7 @@ def download_tests(tests):
     header("step2: downloading pdf tests")
     for lesson in tests:
         print(f"downloading {lesson} tests")
-        dir_path = f"temp/{lesson}"
+        dir_path = f"temp1/{lesson}"
         os.mkdir(dir_path)
         for i, test in enumerate(tests[lesson]):
             print(f"downloading test {i}/{len(tests) - 1} of {lesson}")
@@ -55,21 +61,16 @@ def slice_tests(lessons):
         log[lesson] = {"exercises": []}
         for i, test in enumerate(lessons[lesson]):
             print(f"slicing {i} of {len(lessons[lesson]) - 1}")
-            target_file = f"temp/{lesson}/{i}.pdf"
-            new_dir = f"temp/{lesson}/{i}"
-            try:
-                res = slicer(target_file, new_dir)
-                print(f"sliced {i} of {lesson} successfully")
-                for change in res:
-                    log[lesson]["exercises"].append(change["path"])
-                saved += 1
-            except:
-                print(f"An error occured in test {i} of {len(lessons[lesson]) - 1}")
-                shutil.rmtree(new_dir)
-                lost += 1
-            finally:
-                os.remove(target_file)
-                total += 1
+            target_file = f"temp1/{lesson}/{i}.pdf"
+            new_dir = f"temp1/{lesson}/{i}"
+            res = slicer(target_file, new_dir)
+            print(res)
+            print(f"sliced {i} of {lesson} successfully")
+            for change in res:
+                log[lesson]["exercises"].append(change["path"])
+            saved += 1
+            os.remove(target_file)
+            total += 1
     
     print(f"{saved} of {total} lessons sliced successfully, {lost} lost")
 
@@ -118,10 +119,10 @@ def header(text:str):
     print(text)
 
 def config():
-    os.mkdir("temp")
+    os.mkdir("temp1")
 
 def unconfig():
-    shutil.rmtree("temp")
+    shutil.rmtree("temp1")
 
 
 try:

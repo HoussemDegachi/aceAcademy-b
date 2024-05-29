@@ -22,9 +22,14 @@ const historyCoursesSchema = new Schema(
 
 const userSchema = new Schema(
   {
-    userName: String,
+    userName: {
+      type: String,
+       trim: true
+    },
     email: {
       type: String,
+      lowercase: true,
+      trim: true,
       unique: [true, "Email address is already used"]
     },
     role : {
@@ -32,7 +37,10 @@ const userSchema = new Schema(
       enum: ["Student", "Manager", "Admin"],
       default: "Student"
     },
-    password: String,
+    password: {
+      type: String,
+      trim: true
+    },
     history: {
       exercises: [{ type: Types.ObjectId, ref: "Exercise" }],
       courses: [historyCoursesSchema],
@@ -57,8 +65,7 @@ userSchema.pre("save", async function (next) {
 
 userSchema.statics.findAndValidate = async function (email, password) {
   try {
-    console.log(email)
-    const user = await this.findOne({ email })
+    const user = await this.findOne({ email: email.toLowerCase().trim() })
     console.log(user)
     if (await bcrypt.compare(password, user.password)) return user
     return false

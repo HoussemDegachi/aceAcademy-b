@@ -12,7 +12,14 @@ const chapterSchema = Schema({
             yId: String,
             link: String,
             duration: Number
-        }
+        },
+        videos: [
+            {
+                yId: String,
+                link: String,
+                duration: Number
+            }
+        ]
     },
     subject: {type: Types.ObjectId, ref: "Subject"},
     exercises: [{type: Types.ObjectId, ref: "Exercise"}]

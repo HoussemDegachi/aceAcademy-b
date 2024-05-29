@@ -7,8 +7,9 @@ import Chapter from "../models/Chapter.js";
 import sizeOf from "image-size"
 import Class from "../models/Class.js";
 
-// uploadImage("../seeds/temp/barycentre/0/0-0.png", "2tech/math")
+// uploadImage("../seeds/temp/programming.png", "logo")
 //     .then((data) => console.log(data))
+
 
 mongoose.connect(process.env.DB_URL).then(() => {
     console.log("Connected to DB")
@@ -19,6 +20,7 @@ const imageBase = "../seeds/"
 const createSubject = async (name, logo) => {
     const image = await uploadImage(logo, "logo")
     const newSubject = new Subject({name})
+    console.log(image)
     newSubject.logo = {
         filename: image.public_id,
         url: image.secure_url,
@@ -33,15 +35,11 @@ const createChaptersAndExercises = async (data) => {
         console.log(`creating chapter ${item}`)
         const itemData = data[item]
         const newChapter = new Chapter({name: item, trimester: itemData.trimester, order: itemData.order})
-        newChapter.course.video = {
-            yId: itemData.cours.video.id,
-            link: itemData.cours.video.link,
-            duration: itemData.cours.video.duration
-        }
+        newChapter.course.videos = itemData.cours.videos
 
         for (let exercise of itemData.exercises) {
             console.log(`creating ${exercise} for ${item}`)
-            const imageData = await uploadImage(`${imageBase}${exercise}`, "2sc/math")
+            const imageData = await uploadImage(`${imageBase}${exercise}`, "2tech/physics")
             const newExercise = new Exercise()
             newExercise.image = {
                 filename: imageData.public_id,
@@ -74,15 +72,26 @@ const createClassesAndAppend = async (classes, subjects) => {
     for (const itemClass of classes) {
         console.log(itemClass)
         const newClass = new Class(itemClass)
-        newClass.subjects.push(subjects)
+        for (let subject of subjects) {
+            newClass.subjects.push(subject)
+        }
         await newClass.save()
+    }
+}
+
+const findClassesAndAppend = async (classes, subjects) => {
+    for (const classCondition of classes) {
+        const sClass = await Class.findOne(classCondition)
+        for (let subject of subjects) {
+            sClass.subjects.push(subject)
+        }
+        await sClass.save()
     }
 }
 
 const seedDB = async () => {
     console.log("Creating Subjects")
-    // const subjectId = await createSubject("Math", `${imageBase}temp/icons/math-icon.png`)
-    const subjectId = "6640ca6ca8c64cba8ee91c9c"
+    const subjectId = await createSubject("Physique", `${imageBase}temp/physics.png`)
     console.log("Subject created successfully")
     console.log("Creating CHapters and exercises")
     const chapters = await createChaptersAndExercises(exercisesData)
@@ -90,7 +99,8 @@ const seedDB = async () => {
     console.log("Appending")
     await append(subjectId, chapters)
     console.log("Appended successfully")
-    await createClassesAndAppend([{name: "2 تكنولوجيا", orientation: "technology", grade: 2, state: "Secondary"}, {name: "2 علوم", orientation: "science", grade: 2, state: "Secondary"}], [subjectId])
+    await findClassesAndAppend([{_id: "6650741b202fa18d56f6abdd"}, {_id: "6650741b202fa18d56f6abdf"}], [subjectId])
+    // await createClassesAndAppend([{name: "2 تكنولوجيا", orientation: "technology", grade: 2, state: "Secondary"}, {name: "2 علوم", orientation: "science", grade: 2, state: "Secondary"}], [subjectId])
 }
 
 seedDB().then(() => {

@@ -8,7 +8,7 @@ def main():
 
     for header in data:
         cours_name = header.replace("_", " ")
-        res = VideosSearch(f"math 2 eme science {cours_name} cours taki", limit = 8)
+        res = VideosSearch(f"physique 2 eme science {cours_name} cours taki", limit = 8)
         videos = res.result()["result"]
         for video in videos:
             minutes = int(video["duration"].split(":")[0])

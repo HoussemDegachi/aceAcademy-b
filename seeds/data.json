@@ -1,208 +1,52 @@
 {
-  "equations_in\u00e9quations": {
-    "trimester": 1,
-    "order": 3,
-    "exercises": [
-      "temp/equations_in\u00e9quations/0/0-0.png",
-      "temp/equations_in\u00e9quations/0/0-1.png",
-      "temp/equations_in\u00e9quations/0/0-2.png",
-      "temp/equations_in\u00e9quations/0/0-3.png",
-      "temp/equations_in\u00e9quations/0/1-4.png",
-      "temp/equations_in\u00e9quations/0/1-5.png",
-      "temp/equations_in\u00e9quations/0/1-6.png",
-      "temp/equations_in\u00e9quations/0/1-7.png",
-      "temp/equations_in\u00e9quations/0/2-8.png",
-      "temp/equations_in\u00e9quations/0/3-9.png",
-      "temp/equations_in\u00e9quations/1/0-0.png",
-      "temp/equations_in\u00e9quations/1/0-1.png",
-      "temp/equations_in\u00e9quations/1/0-2.png",
-      "temp/equations_in\u00e9quations/1/0-3.png",
-      "temp/equations_in\u00e9quations/1/1-4.png",
-      "temp/equations_in\u00e9quations/2/0-0.png",
-      "temp/equations_in\u00e9quations/2/0-1.png",
-      "temp/equations_in\u00e9quations/2/0-2.png",
-      "temp/equations_in\u00e9quations/2/0-3.png",
-      "temp/equations_in\u00e9quations/2/0-4.png"
-    ],
-    "cours": {
-      "video": {
-        "id": "flBZ4wqQIu4",
-        "link": "https://www.youtube.com/embed/flBZ4wqQIu4",
-        "duration": 16
-      }
-    }
-  },
-  "arithm\u00e9tique": {
-    "order": 8,
-    "trimester": 2,
-    "exercises": [
-      "temp/arithm\u00e9tique/0/0-0.png",
-      "temp/arithm\u00e9tique/0/0-1.png",
-      "temp/arithm\u00e9tique/0/0-2.png",
-      "temp/arithm\u00e9tique/0/0-3.png",
-      "temp/arithm\u00e9tique/0/0-4.png",
-      "temp/arithm\u00e9tique/0/0-5.png",
-      "temp/arithm\u00e9tique/0/0-6.png",
-      "temp/arithm\u00e9tique/0/1-7.png",
-      "temp/arithm\u00e9tique/0/1-8.png",
-      "temp/arithm\u00e9tique/0/1-9.png",
-      "temp/arithm\u00e9tique/0/1-10.png",
-      "temp/arithm\u00e9tique/0/2-11.png",
-      "temp/arithm\u00e9tique/0/2-12.png",
-      "temp/arithm\u00e9tique/1/0-0.png",
-      "temp/arithm\u00e9tique/1/0-1.png",
-      "temp/arithm\u00e9tique/1/0-2.png",
-      "temp/arithm\u00e9tique/1/0-3.png"
-    ],
-    "cours": {
-      "video": {
-        "id": "YNpCRk4h3KM",
-        "link": "https://www.youtube.com/embed/YNpCRk4h3KM",
-        "duration": 23
-      }
-    }
-  },
-  "suites_r\u00e9elles": {
-    "trimester": 2,
-    "order": 10,
-    "exercises": [
-      "temp/suites_r\u00e9elles/0/0-0.png",
-      "temp/suites_r\u00e9elles/0/0-1.png",
-      "temp/suites_r\u00e9elles/0/0-2.png",
-      "temp/suites_r\u00e9elles/0/0-3.png",
-      "temp/suites_r\u00e9elles/0/0-4.png",
-      "temp/suites_r\u00e9elles/0/1-5.png",
-      "temp/suites_r\u00e9elles/0/1-6.png",
-      "temp/suites_r\u00e9elles/0/2-7.png",
-      "temp/suites_r\u00e9elles/0/2-8.png",
-      "temp/suites_r\u00e9elles/0/2-9.png",
-      "temp/suites_r\u00e9elles/0/2-10.png",
-      "temp/suites_r\u00e9elles/0/3-11.png",
-      "temp/suites_r\u00e9elles/0/3-12.png",
-      "temp/suites_r\u00e9elles/0/4-13.png",
-      "temp/suites_r\u00e9elles/0/4-14.png",
-      "temp/suites_r\u00e9elles/0/4-15.png",
-      "temp/suites_r\u00e9elles/0/5-16.png",
-      "temp/suites_r\u00e9elles/0/5-17.png",
-      "temp/suites_r\u00e9elles/0/5-18.png",
-      "temp/suites_r\u00e9elles/0/6-19.png",
-      "temp/suites_r\u00e9elles/0/6-20.png",
-      "temp/suites_r\u00e9elles/0/6-21.png",
-      "temp/suites_r\u00e9elles/0/6-22.png",
-      "temp/suites_r\u00e9elles/0/7-23.png",
-      "temp/suites_r\u00e9elles/1/0-0.png",
-      "temp/suites_r\u00e9elles/1/0-1.png",
-      "temp/suites_r\u00e9elles/1/0-2.png",
-      "temp/suites_r\u00e9elles/1/0-3.png",
-      "temp/suites_r\u00e9elles/1/0-4.png",
-      "temp/suites_r\u00e9elles/1/0-5.png",
-      "temp/suites_r\u00e9elles/1/0-6.png",
-      "temp/suites_r\u00e9elles/1/0-7.png"
-    ],
-    "cours": {
-      "video": {
-        "id": "MwRmrF-CrrY",
-        "link": "https://www.youtube.com/embed/MwRmrF-CrrY",
-        "duration": 18
-      }
-    }
-  },
-  "homoth\u00e9tie__rotation": {
-    "trimester": 2,
+  "Energie_et_controle": {
+    "trimester": 3,
     "order": 9,
     "exercises": [
-      "temp/homoth\u00e9tie__rotation/1/0-0.png",
-      "temp/homoth\u00e9tie__rotation/1/0-1.png",
-      "temp/homoth\u00e9tie__rotation/1/0-2.png",
-      "temp/homoth\u00e9tie__rotation/1/0-3.png",
-      "temp/homoth\u00e9tie__rotation/1/0-4.png",
-      "temp/homoth\u00e9tie__rotation/1/0-5.png",
-      "temp/homoth\u00e9tie__rotation/1/0-6.png",
-      "temp/homoth\u00e9tie__rotation/1/1-7.png",
-      "temp/homoth\u00e9tie__rotation/1/1-8.png",
-      "temp/homoth\u00e9tie__rotation/3/0-0.png",
-      "temp/homoth\u00e9tie__rotation/3/0-1.png",
-      "temp/homoth\u00e9tie__rotation/3/0-2.png",
-      "temp/homoth\u00e9tie__rotation/3/1-3.png",
-      "temp/homoth\u00e9tie__rotation/3/1-4.png",
-      "temp/homoth\u00e9tie__rotation/3/1-5.png",
-      "temp/homoth\u00e9tie__rotation/5/0-0.png",
-      "temp/homoth\u00e9tie__rotation/5/0-1.png",
-      "temp/homoth\u00e9tie__rotation/5/0-2.png"
+      "temp/Energie_et_controle/0/0-0.png",
+      "temp/Energie_et_controle/0/0-1.png",
+      "temp/Energie_et_controle/0/1-2.png",
+      "temp/Energie_et_controle/0/1-3.png",
+      "temp/Energie_et_controle/1/1-3.png",
+      "temp/Energie_et_controle/2/1-2.png",
+      "temp/Energie_et_controle/2/1-3.png",
+      "temp/Energie_et_controle/2/2-4.png",
+      "temp/Energie_et_controle/3/0-0.png",
+      "temp/Energie_et_controle/3/1-1.png",
+      "temp/Energie_et_controle/3/2-2.png"
     ],
     "cours": {
-      "video": {
-        "id": "YNpCRk4h3KM",
-        "link": "https://www.youtube.com/embed/YNpCRk4h3KM",
-        "duration": 23
-      }
+      "videos": [{
+        "id": "DNBpb6Zijww",
+        "link": "https://youtube.com/embed/DNBpb6Zijww",
+        "duration": 32
+      }]
     }
   },
-  "g\u00e9om\u00e9trie_analytique": {
+  "optique": {
     "trimester": 3,
-    "order": 13,
+    "order": 10,
     "exercises": [
-      "temp/g\u00e9om\u00e9trie_analytique/0/0-0.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/0-1.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/0-2.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/0-3.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/0-4.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/1-5.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/1-6.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/1-7.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/1-8.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/1-9.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/1-10.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/1-11.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/1-12.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/2-13.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/2-14.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/2-15.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/2-16.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/2-17.png",
-      "temp/g\u00e9om\u00e9trie_analytique/0/2-18.png",
-      "temp/g\u00e9om\u00e9trie_analytique/1/0-0.png",
-      "temp/g\u00e9om\u00e9trie_analytique/1/0-1.png",
-      "temp/g\u00e9om\u00e9trie_analytique/1/0-2.png",
-      "temp/g\u00e9om\u00e9trie_analytique/1/0-3.png",
-      "temp/g\u00e9om\u00e9trie_analytique/1/0-4.png",
-      "temp/g\u00e9om\u00e9trie_analytique/1/0-5.png",
-      "temp/g\u00e9om\u00e9trie_analytique/1/0-6.png",
-      "temp/g\u00e9om\u00e9trie_analytique/2/0-0.png",
-      "temp/g\u00e9om\u00e9trie_analytique/2/0-1.png",
-      "temp/g\u00e9om\u00e9trie_analytique/2/0-2.png",
-      "temp/g\u00e9om\u00e9trie_analytique/2/0-3.png",
-      "temp/g\u00e9om\u00e9trie_analytique/2/1-4.png",
-      "temp/g\u00e9om\u00e9trie_analytique/2/1-5.png",
-      "temp/g\u00e9om\u00e9trie_analytique/2/1-6.png"
+      "temp/optique/0/1-2.png",
+      "temp/optique/1/0-0.png",
+      "temp/optique/1/1-1.png",
+      "temp/optique/1/1-2.png",
+      "temp/optique/1/2-3.png",
+      "temp/optique/1/3-4.png"
     ],
     "cours": {
-      "video": {
-        "id": "UM5LrFO5MAI",
-        "link": "https://www.youtube.com/embed/UM5LrFO5MAI",
-        "duration": 17
+        "videos": [
+            {
+          "id": "Xrpf8jhsfVE",
+          "link": "https://youtube.com/embed/Xrpf8jhsfVE",
+          "duration": 34
+        },
+        {
+          "id": "qSHGZ1SmbY4",
+          "link": "https://youtube.com/embed/qSHGZ1SmbY4",
+          "duration": 38
+        }
+    ]
       }
-    }
-  },
-  "trigonom\u00e9trie": {
-    "trimester": 2,
-    "order": 11,
-    "exercises": [
-      "temp/trigonom\u00e9trie/0/0-0.png",
-      "temp/trigonom\u00e9trie/0/0-1.png",
-      "temp/trigonom\u00e9trie/0/0-2.png",
-      "temp/trigonom\u00e9trie/0/0-3.png",
-      "temp/trigonom\u00e9trie/0/0-4.png",
-      "temp/trigonom\u00e9trie/0/1-5.png",
-      "temp/trigonom\u00e9trie/0/1-6.png",
-      "temp/trigonom\u00e9trie/0/1-7.png"
-    ],
-    "cours": {
-      "video": {
-        "id": "9XiYt5XO5kQ",
-        "link": "https://www.youtube.com/embed/9XiYt5XO5kQ",
-        "duration": 24
-      }
-    }
   }
 }

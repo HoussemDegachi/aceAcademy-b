@@ -15,19 +15,22 @@ def get_devoirat(url, base):
     soup = BeautifulSoup(page.content, "html.parser")
     raw_data = soup.find_all(True, {'class':['mg-b10', 'cc-m-download-link']})
     data = {}
-
+    appends = {}
     current = None
+
     for item in raw_data:
 
         if "mg-b10" in item.get("class"):
             current = item.text.strip().replace("/", "").replace(" ", "_").lower()
-            print(current)
             if "devoir" in current:
                 break
             data[current] = []
+            appends[current] = 0
 
         else:
-            data[current].append(f"{base}{item.get('href')}")
+            if appends[current] < 5:
+                data[current].append(f"{base}{item.get('href')}")
+                appends[current] += 1
     
     return data
 

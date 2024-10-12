@@ -133,3 +133,5 @@ dist
 seeds/temp
 seeds/__pycache__
 seeds/*.json
+
+.venv

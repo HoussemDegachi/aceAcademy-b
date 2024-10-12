@@ -30,6 +30,12 @@ export const user = Joi.object({
     classId: Joi.string().escapeHTML().required()
 }).required()
 
+export const userUpdate = Joi.object({
+    userName: Joi.string().escapeHTML().min(2).required(),
+    classId: Joi.string().escapeHTML().required()
+})
+
 export default {
-    user
+    user,
+    userUpdate
 }

@@ -72,8 +72,20 @@ export const addHistory = async (req, res) => {
     })
 }
 
+export const update = async (req, res) => {
+    const { id, userName, classId } = req.body
+
+    const updatedUser = await User.findByIdAndUpdate(id, {userName, class: classId}, {new: true})
+
+    res.status(200).json({
+        message: "User updated successfully",
+        data: updatedUser
+    })
+}
+
 export default {
     get,
     remove,
-    addHistory
+    addHistory,
+    update
 }

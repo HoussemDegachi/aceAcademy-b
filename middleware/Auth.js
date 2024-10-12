@@ -13,6 +13,16 @@ export const isUserValid = (req, res, next) => {
     return next()
 }
 
+export const isUserUpdateValid = (req, res, next) => {
+    const {currentUser, id, ...userData} = req.body
+    const {error} = authSchemas.userUpdate.validate(userData)
+    if (error) {
+        const msg = error.message
+        return next(new ExpressError(msg, 400))
+    }
+    return next()
+}
+
 export const isClassValid = async (req, res, next) => {
     // verify that class exists
     const {classId} = req.body

@@ -63,4 +63,16 @@ export const isUserAuthenticated = async (req, res, next) => {
     next()
 }
 
+export const isUserNotVerified = async (req, res, next) => {
+    const { currentUser } = req.body
+
+    const userData = await User.findById(currentUser.id)
+
+    if (userData.isVerified) {
+        return next(new ExpressError("This email is already verified", 403))
+    }
+
+    next()
+}
+
 export default {isUserValid, isClassValid, isUserAuthorized, isUserAuthenticated}

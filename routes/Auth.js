@@ -23,8 +23,15 @@ router
     .get(isUserAuthenticated, isUserNotVerified, catchAsync(auth.getOtp))
 
 router
-    .route("/reset-password")
-    .get(isEmailExist, catchAsync(auth.sendResetCode))
+    .route("/resetPassword/getCode")
+    .post(isEmailExist, catchAsync(auth.sendResetCode))
+
+router
+    .route("/resetPassword/verifyCode")
+    .post(isResetCodeValid, catchAsync(auth.verifyResetCode))
+
+router
+    .route("/resetPassword")
     .post(isResetCodeValid, isPasswordValid, catchAsync(auth.resetPassword))
 
 export default router;

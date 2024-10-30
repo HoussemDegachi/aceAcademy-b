@@ -1,8 +1,10 @@
+import Mail from "../mailerSystem/mail.js"
 import Otp from "../models/Otp.js"
 import User from "../models/User.js"
 import ExpressError from "../utils/ExpressError.js"
 import { generateToken } from "../utils/jwtHelpers.js"
 import { generateAndSendOtp, verifyOtp } from "../utils/otpHelpers.js"
+import { generateResetCode } from "../utils/passwordResetHelpers.js"
 
 export const signup = async (req, res) => {
     const {email, password, userName, classId} = req.body
@@ -62,6 +64,37 @@ export const getOtp = async (req, res) => {
     })
 }
 
+export const sendResetCode = async (req, res) => {
+    const {email} = req.body
+    const code = generateResetCode(email)
+    const resetUrl = `${process.env.FRONTEND_BASE}/reset/${code}`
+    
+    await new Mail()
+        .to(email)
+        .subject("Here is your reset link")
+        .text(resetUrl)
+        .send()
+
+    res.status(201).json({
+        message: "Reset link have been sent successfully"
+    })
+}
+
+export const resetPassword = async (req, res) => {
+    const { password, currentUser: {email} } = req.body
+
+    console.log(email)
+    
+    const targetUser = await User.findOne({email})
+    targetUser.password = password
+    await targetUser.save()
+
+    res.status(200).json({
+        message: "Password have been updated successfully",
+        data: targetUser
+    })
+}
+
 export default {
-    signup, login, getOtp, sendOtp
+    signup, login, getOtp, sendOtp, sendResetCode, resetPassword
 }

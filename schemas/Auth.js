@@ -35,7 +35,12 @@ export const userUpdate = Joi.object({
     classId: Joi.string().escapeHTML().required()
 })
 
+export const passwordUpdate = Joi.object({
+    password: Joi.string().escapeHTML().min(8).required()
+})
+
 export default {
     user,
-    userUpdate
+    userUpdate,
+    passwordUpdate
 }
